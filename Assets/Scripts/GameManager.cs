@@ -43,7 +43,8 @@ public class GameManager : MonoBehaviour
 
     void swapCamera(){
         camera1.enabled = !camera1.enabled;
-        camera2.enabled = !camera2.enabled;    
+        camera2.enabled = !camera2.enabled; 
+        camera1.GetComponent<AudioListener>().enabled = !camera1.GetComponent<AudioListener>().enabled;
+        camera2.GetComponent<AudioListener>().enabled = !camera2.GetComponent<AudioListener>().enabled;
     }
-
 }

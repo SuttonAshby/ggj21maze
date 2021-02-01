@@ -30,8 +30,8 @@ public class MovementController : MonoBehaviour {
 
         Vector3 movement = new Vector3 (horizontal, 0f, vertical);
         
-
-        gameObject.transform.Translate(Vector3.forward * GameManager.Instance.charSpeed);
+        var speed = (GameManager.Instance.score * 0.001667f) + GameManager.Instance.charSpeed;
+        gameObject.transform.Translate(Vector3.forward * speed);
         
     }
 }

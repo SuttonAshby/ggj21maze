@@ -7,6 +7,8 @@ public class ColliderCheck : MonoBehaviour {
     public string otherTag;
     public Vector3 startPostion;
     public Vector3 startRotation;
+    public AudioClip scoreSound;
+    public AudioClip wallHit;
 
     void Start() {
         startPostion = gameObject.transform.position;
@@ -18,8 +20,9 @@ public class ColliderCheck : MonoBehaviour {
             GameManager.Instance.score++;
             ResetPosition();
         } else if (other.gameObject.tag == "Danger") {
+            // gameObject
             if(GameManager.Instance.score > 0){
-                GameManager.Instance.score--;
+                GameManager.Instance.score = 0;
             }
             ResetPosition();
         }
